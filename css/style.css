@@ -42,7 +42,7 @@ body {
     --shadow:
         0 10px 40px rgba(0, 0, 0, 0.4);
 
-    --transition: all 0.4s ease;
+    /* --transition: all 0.4s ease; */
 }
 
 /* =========================
@@ -149,7 +149,7 @@ p {
    CURSOR GLOW
 ========================= */
 
-.cursor-glow {
+/* .cursor-glow {
     width: 40px;
     height: 40px;
 
@@ -165,7 +165,7 @@ p {
     z-index: 1;
 
     transform: translate(-50%, -50%);
-}
+} */
 
 /* =========================
    NAVBAR
@@ -303,14 +303,14 @@ p {
     animation: heroZoom 12s linear infinite;
 }
 
-@keyframes heroZoom {
+/* @keyframes heroZoom {
     from {
         transform: scale(1);
     }
     to {
         transform: scale(1.08);
     }
-}
+} */
 
 /* Overlay */
 
@@ -416,7 +416,7 @@ p {
     border: 1px solid rgba(255,255,255,0.08);
     border-radius: 18px;
     padding: 12px;
-    transition: 0.4s ease;
+    /* transition: 0.4s ease; */
 }
 
 .stat-card:hover {
@@ -446,7 +446,7 @@ p {
     z-index: 10;
 }
 
-.scroll-indicator::before {
+/* .scroll-indicator::before {
     content: "";
     display: block;
     width: 4px;
@@ -454,7 +454,7 @@ p {
     border-radius: 50px;
     background: var(--accent);
     animation: scrollMove 2s infinite;
-}
+} */
 
 /* @keyframes scrollMove {
     0% {
@@ -499,7 +499,7 @@ p {
 
 /* Decorative Grid */
 
-.stats-section::before {
+/* .stats-section::before {
 
     content: "";
 
@@ -522,10 +522,10 @@ p {
 
     pointer-events: none;
 
-}
+} */
 
 /* Accent Glow */
-.stats-section::after {
+/* .stats-section::after {
 
     content: "";
 
@@ -548,7 +548,7 @@ p {
 
     animation: statsGlow 10s ease-in-out infinite;
 
-}
+} */
 @keyframes statsGlow {
 
     0%,100% {
@@ -764,7 +764,7 @@ p {
         iconFloat 18s ease-in-out infinite;
 
 }
-.bg-icon:nth-child(1) {
+/* .bg-icon:nth-child(1) {
 
     top: 8%;
     left: 10%;
@@ -846,7 +846,7 @@ p {
     bottom: 8%;
     right: 8%;
 
-}
+} */
 /* @keyframes iconFloat {
 
     0% {
@@ -1209,7 +1209,7 @@ p {
     font-size: 32px;
 
 }
-@keyframes iconGlow {
+/* @keyframes iconGlow {
 
     0%,100% {
 
@@ -1223,14 +1223,14 @@ p {
 
     }
 
-}
-.bg-icon {
+} */
+/* .bg-icon {
 
     animation:
         blueprintFloat 20s ease-in-out infinite,
         iconGlow 8s ease-in-out infinite;
 
-}
+} */
 .offer-card {
 
     position: relative;
@@ -1536,9 +1536,7 @@ p {
     transform: translateY(-8px);
 
 }
-/* =========================
-   SERVICES
-========================= */
+
 /* =========================
    SERVICES SECTION
 ========================= */
