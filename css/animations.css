@@ -157,7 +157,7 @@ p {
    CURSOR GLOW
 ========================= */
 
-.cursor-glow {
+/* .cursor-glow {
     width: 75px;
     height: 75px;
 
@@ -173,7 +173,7 @@ p {
     z-index: 1;
 
     transform: translate(-50%, -50%);
-}
+} */
 
 
 /* =========================
