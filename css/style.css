@@ -549,7 +549,7 @@ p {
     animation: statsGlow 10s ease-in-out infinite;
 
 } */
-@keyframes statsGlow {
+/* @keyframes statsGlow {
 
     0%,100% {
 
@@ -563,7 +563,7 @@ p {
 
     }
 
-}
+} */
 
 
 /* @keyframes glowFloat {
@@ -740,7 +740,7 @@ p {
 
 }
 
-.offer-bg-icons {
+/* .offer-bg-icons {
 
     position: absolute;
 
@@ -763,7 +763,7 @@ p {
     animation:
         iconFloat 18s ease-in-out infinite;
 
-}
+} */
 /* .bg-icon:nth-child(1) {
 
     top: 8%;
@@ -1292,7 +1292,7 @@ p {
 
     transform: skewX(-20deg);
 
-    transition: 1.5s ease;
+    /* transition: 1.5s ease; */
 
 }
 
