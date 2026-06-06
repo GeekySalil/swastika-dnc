@@ -1,157 +1,162 @@
 
-// // =========================
-// // GSAP + SCROLLTRIGGER
-// // =========================
+// =========================
+// GSAP + SCROLLTRIGGER
+// =========================
 
-// gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger);
+const isDesktop = window.innerWidth > 768;
 
+// =========================
+// HERO CINEMATIC INTRO
+// =========================
 
-// // =========================
-// // HERO CINEMATIC INTRO
-// // =========================
+gsap.from(".hero-mini-title", {
 
-// gsap.from(".hero-mini-title", {
+    y: 40,
+    opacity: 0,
 
-//     y: 40,
+    duration: 1,
+
+    ease: "power4.out"
+
+});
+
+gsap.from(".hero-content h1", {
+
+    y: 80,
+    opacity: 0,
+
+    duration: 1.4,
+
+    delay: 0.2,
+
+    ease: "power4.out"
+
+});
+
+gsap.from(".founder-line span", {
+
+    y: 30,
+    opacity: 0,
+
+    stagger: 0.15,
+
+    duration: 1,
+
+    delay: 0.5,
+
+    ease: "power3.out"
+
+});
+/*
+gsap.from(".hero-buttons a", {
+
+    y: 30,
+    opacity: 0,
+
+    stagger: 0.15,
+
+    duration: 1,
+
+    delay: 0.8,
+
+    ease: "power3.out"
+
+});
+*/
+const heroButtons =
+    document.querySelectorAll(".hero-buttons a");
+
+if (heroButtons.length > 0) {
+
+    gsap.from(heroButtons, {
+
+        y: 30,
+
+        opacity: 0,
+
+        stagger: 0.15,
+
+        duration: 1,
+
+        delay: 0.8,
+
+        ease: "power3.out",
+
+        clearProps: "all"
+
+    });
+
+}
+// gsap.from(".stat-card", {
+
+//     y: 50,
 //     opacity: 0,
 
-//     duration: 1,
+//     stagger: 0.12,
 
-//     ease: "power4.out"
+//     duration: 1.1,
 
-// });
-
-// gsap.from(".hero-content h1", {
-
-//     y: 80,
-//     opacity: 0,
-
-//     duration: 1.4,
-
-//     delay: 0.2,
-
-//     ease: "power4.out"
-
-// });
-
-// gsap.from(".founder-line span", {
-
-//     y: 30,
-//     opacity: 0,
-
-//     stagger: 0.15,
-
-//     duration: 1,
-
-//     delay: 0.5,
+//     delay: 1,
 
 //     ease: "power3.out"
 
 // });
-// /*
-// gsap.from(".hero-buttons a", {
 
-//     y: 30,
-//     opacity: 0,
-
-//     stagger: 0.15,
-
-//     duration: 1,
-
-//     delay: 0.8,
-
-//     ease: "power3.out"
-
-// });
-// */
-// const heroButtons =
-//     document.querySelectorAll(".hero-buttons a");
-
-// if (heroButtons.length > 0) {
-
-//     gsap.from(heroButtons, {
-
-//         y: 30,
-
-//         opacity: 0,
-
-//         stagger: 0.15,
-
-//         duration: 1,
-
-//         delay: 0.8,
-
-//         ease: "power3.out",
-
-//         clearProps: "all"
-
-//     });
-
-// }
-// // gsap.from(".stat-card", {
-
-// //     y: 50,
-// //     opacity: 0,
-
-// //     stagger: 0.12,
-
-// //     duration: 1.1,
-
-// //     delay: 1,
-
-// //     ease: "power3.out"
-
-// // });
-
-// // gsap.from(".stats-section .stat-card", {
-
-// //     scrollTrigger: {
-
-// //         trigger: ".stats-section",
-
-// //         start: "top 75%"
-
-// //     },
-
-// //     opacity: 0,
-
-// //     y: 60,
-
-// //     stagger: 0.15,
-
-// //     duration: 1,
-
-// //     ease: "power3.out"
-
-// // });
-// // =========================
-// // HERO PARALLAX
-// // =========================
-
-// gsap.to(".heroSwiper img", {
-
-//     yPercent: 8,
-
-//     ease: "none",
+// gsap.from(".stats-section .stat-card", {
 
 //     scrollTrigger: {
 
-//         trigger: ".hero",
+//         trigger: ".stats-section",
 
-//         start: "top top",
+//         start: "top 75%"
 
-//         end: "bottom top",
+//     },
 
-//         scrub: true
+//     opacity: 0,
 
-//     }
+//     y: 60,
+
+//     stagger: 0.15,
+
+//     duration: 1,
+
+//     ease: "power3.out"
 
 // });
+// =========================
+// HERO PARALLAX
+// =========================
 
+// HERO PARALLAX
 
-// // =========================
-// // SECTION REVEALS
-// // =========================
+if (isDesktop) {
+
+    gsap.to(".heroSwiper img", {
+
+        yPercent: 8,
+
+        ease: "none",
+
+        scrollTrigger: {
+
+            trigger: ".hero",
+
+            start: "top top",
+
+            end: "bottom top",
+
+            scrub: true
+
+        }
+
+    });
+
+}
+
+// =========================
+// SECTION REVEALS
+// =========================
 
 // const revealSections =
 //     document.querySelectorAll(
@@ -185,129 +190,145 @@
 // });
 
 
-// // =========================
-// // SERVICE CARD FLOAT
-// // =========================
+// =========================
+// SERVICE CARD FLOAT
+// =========================
 
-// gsap.utils.toArray(".service-card").forEach((card, index) => {
+if (isDesktop) {
 
-//     gsap.from(card, {
+    gsap.utils.toArray(".service-card").forEach((card, index) => {
 
-//         y: 80,
+        gsap.from(card, {
 
-//         opacity: 0,
+            y: 80,
 
-//         duration: 1,
+            opacity: 0,
 
-//         delay: index * 0.08,
+            duration: 1,
 
-//         ease: "power3.out",
+            delay: index * 0.08,
 
-//         scrollTrigger: {
+            ease: "power3.out",
 
-//             trigger: card,
+            scrollTrigger: {
 
-//             start: "top 88%"
+                trigger: card,
 
-//         }
+                start: "top 88%"
 
-//     });
+            }
 
-// });
+        });
 
+    });
 
-// // =========================
-// // PORTFOLIO CINEMATIC SCALE
-// // =========================
-
-// gsap.utils.toArray(".portfolio-card").forEach((card) => {
-
-//     gsap.from(card, {
-
-//         scale: 0.92,
-
-//         opacity: 0,
-
-//         duration: 1.2,
-
-//         ease: "power4.out",
-
-//         scrollTrigger: {
-
-//             trigger: card,
-
-//             start: "top 85%"
-
-//         }
-
-//     });
-
-// });
+}
 
 
-// // =========================
-// // PARALLAX IMAGES
-// // =========================
+// =========================
+// PORTFOLIO CINEMATIC SCALE
+// =========================
 
-// gsap.utils.toArray(
-//     ".portfolio-card img, .gallery-grid img"
-// ).forEach((image) => {
+if (isDesktop) {
 
-//     gsap.to(image, {
+    gsap.utils.toArray(".portfolio-card").forEach((card) => {
 
-//         yPercent: 10,
+        gsap.from(card, {
 
-//         ease: "none",
+            scale: 0.92,
 
-//         scrollTrigger: {
+            opacity: 0,
 
-//             trigger: image,
+            duration: 1.2,
 
-//             start: "top bottom",
+            ease: "power4.out",
 
-//             end: "bottom top",
+            scrollTrigger: {
 
-//             scrub: true
+                trigger: card,
 
-//         }
+                start: "top 85%"
 
-//     });
+            }
 
-// });
+        });
 
+    });
 
-// // =========================
-// // TESTIMONIAL CARDS
-// // =========================
-
-// gsap.from(".testimonial-card", {
-
-//     y: 80,
-
-//     opacity: 0,
-
-//     stagger: 0.2,
-
-//     duration: 1.2,
-
-//     ease: "power4.out",
-
-//     scrollTrigger: {
-
-//         trigger: ".testimonials-section",
-
-//         start: "top 75%"
-
-//     }
-
-// });
+}
 
 
+// =========================
+// PARALLAX IMAGES
+// =========================
+
+if (isDesktop) {
+
+    gsap.utils.toArray(
+        ".portfolio-card img, .gallery-grid img"
+    ).forEach((image) => {
+
+        gsap.to(image, {
+
+            yPercent: 10,
+
+            ease: "none",
+
+            scrollTrigger: {
+
+                trigger: image,
+
+                start: "top bottom",
+
+                end: "bottom top",
+
+                scrub: true
+
+            }
+
+        });
+
+    });
+
+}
 
 
-// // =========================
-// // CONTACT SECTION REVEAL
-// // =========================
+// =========================
+// TESTIMONIAL CARDS
+// =========================
+
+if (isDesktop) {
+
+    gsap.from(".testimonial-card", {
+
+        y: 80,
+
+        opacity: 0,
+
+        stagger: 0.2,
+
+        duration: 1.2,
+
+        ease: "power4.out",
+
+        scrollTrigger: {
+
+            trigger: ".testimonials-section",
+
+            start: "top 75%"
+
+        }
+
+    });
+
+}
+
+
+
+
+// =========================
+// CONTACT SECTION REVEAL
+// =========================
 
 // gsap.from(".contact-left", {
 
@@ -350,182 +371,198 @@
 // });
 
 
-// // =========================
-// // FOOTER REVEAL
-// // =========================
+// =========================
+// FOOTER REVEAL
+// =========================
 
-// gsap.from(".footer-container", {
+if (isDesktop) {
 
-//     y: 80,
+    gsap.from(".footer-container", {
 
-//     opacity: 0,
+        y: 80,
 
-//     duration: 1.2,
+        opacity: 0,
 
-//     ease: "power4.out",
+        duration: 1.2,
 
-//     scrollTrigger: {
+        ease: "power4.out",
 
-//         trigger: ".footer",
+        scrollTrigger: {
 
-//         start: "top 90%"
+            trigger: ".footer",
 
-//     }
+            start: "top 90%"
 
-// });
+        }
 
+    });
 
-// // =========================
-// // FLOATING BUTTONS ANIMATION
-// // =========================
+}
 
-// gsap.to(".whatsapp-float", {
 
-//     y: -10,
+// =========================
+// FLOATING BUTTONS ANIMATION
+// =========================
 
-//     duration: 1.5,
+if (isDesktop) {
 
-//     repeat: -1,
+    gsap.to(".whatsapp-float", {
 
-//     yoyo: true,
+        y: -10,
 
-//     ease: "power1.inOut"
+        duration: 1.5,
 
-// });
+        repeat: -1,
 
-// gsap.to(".chatbot-button", {
+        yoyo: true,
 
-//     y: -10,
+        ease: "power1.inOut"
 
-//     duration: 1.5,
+    });
 
-//     repeat: -1,
+}
 
-//     yoyo: true,
+if (isDesktop) {
 
-//     ease: "power1.inOut",
+    gsap.to(".chatbot-button", {
 
-//     delay: 0.4
+        y: -10,
 
-// });
+        duration: 1.5,
 
+        repeat: -1,
 
-// // =========================
-// // SMOOTH NAVBAR FADE
-// // =========================
+        yoyo: true,
 
-// gsap.from(".navbar", {
+        ease: "power1.inOut",
 
-//     y: -100,
+        delay: 0.4
 
-//     opacity: 0,
+    });
 
-//     duration: 1.2,
+}
 
-//     ease: "power4.out"
 
-// });
+// =========================
+// SMOOTH NAVBAR FADE
+// =========================
 
-// gsap.from(".offer-card", {
+gsap.from(".navbar", {
 
-//     scrollTrigger: {
+    y: -100,
 
-//         trigger: ".offer-section",
+    opacity: 0,
 
-//         start: "top 75%"
+    duration: 1.2,
 
-//     },
+    ease: "power4.out"
 
-//     opacity: 0,
+});
 
-//     scale: 0.9,
+if (isDesktop) {
 
-//     duration: 1.2,
+    gsap.from(".offer-card", {
 
-//     ease: "power3.out"
+        scrollTrigger: {
 
-// });
-// gsap.from(".reviews-quote-icon", {
+            trigger: ".offer-section",
 
-//     scale: 0,
+            start: "top 75%"
 
-//     rotation: 180,
+        },
 
-//     duration: 1.2,
+        opacity: 0,
 
-//     ease: "back.out(1.7)",
+        scale: 0.9,
 
-//     scrollTrigger: {
+        duration: 1.2,
 
-//         trigger: ".reviews-hero",
+        ease: "power3.out"
 
-//         start: "top 80%"
+    });
 
-//     }
+}
+gsap.from(".reviews-quote-icon", {
 
-// });
+    scale: 0,
 
-// gsap.from(".google-trust-badge", {
+    rotation: 180,
 
-//     opacity: 0,
+    duration: 1.2,
 
-//     y: 40,
+    ease: "back.out(1.7)",
 
-//     duration: 1,
+    scrollTrigger: {
 
-//     delay: 0.2,
+        trigger: ".reviews-hero",
 
-//     scrollTrigger: {
+        start: "top 80%"
 
-//         trigger: ".reviews-hero",
+    }
 
-//         start: "top 80%"
+});
 
-//     }
+gsap.from(".google-trust-badge", {
 
-// });
-// window.addEventListener("load", () => {
+    opacity: 0,
 
-//     const tl = gsap.timeline();
+    y: 40,
 
-//     tl.fromTo(
-//         ".preloader-logo",
-//         {
-//             opacity: 0,
-//             scale: 0.8
-//         },
-//         {
-//             opacity: 1,
-//             scale: 1,
-//             duration: 1.2,
-//             ease: "power3.out"
-//         }
-//     )
+    duration: 1,
 
-//     .to(
-//         ".preloader-tagline span",
-//         {
-//             opacity: 1,
-//             y: 0,
-//             stagger: 0.25,
-//             duration: 0.5
-//         }
-//     )
+    delay: 0.2,
 
-//     .to(
-//         ".preloader",
-//         {
-//             opacity: 0,
-//             duration: 0.8,
-//             delay: 0.5
-//         }
-//     )
+    scrollTrigger: {
 
-//     .set(
-//         ".preloader",
-//         {
-//             display: "none"
-//         }
-//     );
+        trigger: ".reviews-hero",
 
-// });
+        start: "top 80%"
+
+    }
+
+});
+window.addEventListener("load", () => {
+
+    const tl = gsap.timeline();
+
+    tl.fromTo(
+        ".preloader-logo",
+        {
+            opacity: 0,
+            scale: 0.8
+        },
+        {
+            opacity: 1,
+            scale: 1,
+            duration: 1.2,
+            ease: "power3.out"
+        }
+    )
+
+    .to(
+        ".preloader-tagline span",
+        {
+            opacity: 1,
+            y: 0,
+            stagger: 0.25,
+            duration: 0.5
+        }
+    )
+
+    .to(
+        ".preloader",
+        {
+            opacity: 0,
+            duration: 0.8,
+            delay: 0.5
+        }
+    )
+
+    .set(
+        ".preloader",
+        {
+            display: "none"
+        }
+    );
+
+});

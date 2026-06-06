@@ -904,3 +904,17 @@
     }
 
 } */
+
+@media (max-width: 768px) {
+
+    .floating-icon,
+    .offer-icon,
+    .bg-animation,
+    .grid-animation,
+    .construction-icon {
+
+        display: none !important;
+
+    }
+
+}

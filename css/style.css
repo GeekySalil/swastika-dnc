@@ -2426,7 +2426,7 @@ p {
         ratingFloat 3s ease-in-out infinite;
 
 }
-@keyframes ratingFloat {
+/* @keyframes ratingFloat {
 
     0%,100% {
 
@@ -2442,7 +2442,7 @@ p {
 
     }
 
-}
+} */
 /* @keyframes ratingPulse {
 
     0%,100% {
@@ -3019,7 +3019,7 @@ p {
 
 /* =========================
    PRELOADER
-========================= 
+========================= */
 
 .preloader {
 
@@ -3108,4 +3108,4 @@ p {
 
     transform: translateY(15px);
 
-}*/
+}
