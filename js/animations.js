@@ -559,10 +559,31 @@ window.addEventListener("load", () => {
     )
 
     .set(
-        ".preloader",
+    ".preloader",
+    {
+        display: "none"
+    }
+)
+
+.call(() => {
+
+    document.body.classList.remove(
+        "loading"
+    );
+
+    gsap.from(
+        "#site-content",
         {
-            display: "none"
+
+            opacity: 0,
+
+            duration: 0.6,
+
+            ease: "power2.out"
+
         }
     );
+
+});
 
 });
